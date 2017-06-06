@@ -18087,19 +18087,19 @@ In order to exploit this idea we created a class, that behaves exactly as BLS, b
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><div style="background-color:#d9e6fc !important; padding:15px 15px 15px 15px;"> 
+<div style="background-color:#d9e6fc !important; padding:15px 15px 15px 15px;"> 
 We are starting to calculate the average image for each class and then the distances of the images belonging to each class with the average calculated before.<br>
 Having now the set of distances for each class, we evaluate mean and variance. Supposing that the distribution of the distances follows a normal distribution, mean and variance are used to evaluate the pdf  for each class. Given a distance, if the evaluation of the pdf in that point is small enough with respect to the maximum of the pdf it means that the image is far away from the class mean, so it is possible to look how similar it is to the other classes.<br>
-Operating in this way lead us to the following situation:</p>
-<p><ul></p>
-<p><li>given a class, some images have as label a one-hot vector</p>
-<p><li>given the same class, other images will have as label a vector with: a 1 with respect to their class and other numbers with respect to other classes.
-&lt;/ul&gt;
+Operating in this way lead us to the following situation:
+<ul>
+<li>given a class, some images have as label a one-hot vector
+<li>given the same class, other images will have as label a vector with: a 1 with respect to their class and other numbers with respect to other classes.
+</ul>
 <br>
-In order to identify the images far enough from the class mean, we are looking at the ratio between the pdf evaluated for a given distance and the max of the pdf: if 1 - ratio is greater than 0.8, then the image is considered far from the mean.<br></p>
-<p><h4>How to fill the label vector</h4><br>
-We said before that when an image is far from its class mean, the label will be a vector with a 1 with respect to their class and other numbers with respect to other classes. Given an image I of class C1, the vector-label will have 1 with respect to C1 and <i>pdf(distance_between_I_and_mean_of_C)</i> for each class C different from C1.</p>
-
+In order to identify the images far enough from the class mean, we are looking at the ratio between the pdf evaluated for a given distance and the max of the pdf: if 1 - ratio is greater than 0.8, then the image is considered far from the mean.<br>
+<h4>How to fill the label vector</h4><br>
+We said before that when an image is far from its class mean, the label will be a vector with a 1 with respect to their class and other numbers with respect to other classes. Given an image I of class C1, the vector-label will have 1 with respect to C1 and <i>pdf(distance_between_I_and_mean_of_C)</i> for each class C different from C1.
+</div>
 </div>
 </div>
 </div>
